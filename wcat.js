@@ -42,7 +42,7 @@ switch(command){
     break;
 
     case "-b":
-    console.log("no added to non empty lines");
+    console.log(" no added to non empty lines ");
     break;
 
     case "-n":
