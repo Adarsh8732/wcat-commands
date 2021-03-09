@@ -9,6 +9,8 @@ let linebreakFile = require("./linebreak");
 let appendFile=require("./append");
 
 let overrideFile=require("./override");
+const noToLineFile= require("./noToLine");
+const noToEverylineFile = require("./noToEveryline");
 
 let input=process.argv.slice(2);
 
@@ -42,11 +44,11 @@ switch(command){
     break;
 
     case "-b":
-    console.log(" no added to non empty lines ");
+    noToLineFile.fn( input[1]);
     break;
 
     case "-n":
-    console.log(" no added to all the lines ");
+    noToEverylineFile.fn(input[1]);
     break;
 
     default:
