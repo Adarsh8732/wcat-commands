@@ -51,7 +51,8 @@ switch(command){
 
     default:
     {
-    if(input[1]==undefined)
+        if(fs.lstatSync(intput[0]).isFile){
+    if(input[1]==undefined )
     display.fn(input[0]);
     else if(fs.lstatSync(input[1]).isFile)
     {
@@ -65,6 +66,10 @@ switch(command){
     {
         appendFile.fn(input[0],input[1],input[2]);
     }
+    else{
+        console.log("wrong input");
+    }
+}
     else 
     {
         console.log("wrong input");

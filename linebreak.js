@@ -2,10 +2,14 @@ let fs=require("fs");
 let path=require("path");
 // let file=process.argv[2];
 function linebreakfn(file,s,file2){
-    console.log(file);
+    // console.log(file);
+
 let content=fs.readFileSync(file,{encoding:'utf8',flag:'r'});
-// let newcontent=content.replace(/(\r\n|\n|\r)/gm,"");
-let newcontent=content.replace(/\s+/g,' ').trim();
+let newcontent=content.replace(/\r?\n\n|\r/g,"");
+// let newcontent=content.replace(/[\\n]/g,'');
+// .replace(/[\n\t\r]/g,"")
+// let newcontent=content.trim();
+
 if(s==undefined)
 {
     fs.writeFileSync(file,newcontent);
