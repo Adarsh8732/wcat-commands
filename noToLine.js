@@ -11,7 +11,7 @@ let count=0;
 // }
 function noToLinefn(file)
 {
-let vari=0;
+
 let content=fs.readFileSync(file,{encoding:'utf8',flag:'r'});
 let newcontent=content.replace(/\r?\n/g,`\n${++count}`);
 
